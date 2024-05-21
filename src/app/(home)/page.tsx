@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Movie from "../../../components/movie";
-import styles from "../../../styles/home.module.css"
+import styles from "../../../styles/home.module.css";
+import { API_URL } from "../constants";
 
 type IMovie = {
   adult: boolean;
@@ -23,7 +24,7 @@ export const metadata = {
   title: "Home",
 };
 
-export const API_URL = `https://nomad-movies.nomadcoders.workers.dev/movies`;
+
 
 async function getMovies() {
   const json = fetch(API_URL).then((res) => res.json());
@@ -35,13 +36,13 @@ export default async function HomePage() {
   return (
     <div className={styles.container}>
       {movies.map((movie: IMovie) => (
-            <Movie
-              key={movie.id}
-              id={movie.id}
-              poster_path={movie.poster_path}
-              title={movie.title}
-            />
-          ))}
-        </div>
-      )}
-  
+        <Movie
+          key={movie.id}
+          id={movie.id}
+          poster_path={movie.poster_path}
+          title={movie.title}
+        />
+      ))}
+    </div>
+  );
+}
