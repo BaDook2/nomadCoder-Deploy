@@ -1,13 +1,12 @@
 "use client"
 import Link from 'next/link'
-import { useParams, usePathname } from 'next/navigation';
-import React from 'react'
+import { usePathname } from 'next/navigation';
+import styles from "../styles/navigation.module.css"
 
 const Navigation = () => {
   const path = usePathname();
-  const a = useParams();
   return (
-    <nav>
+    <nav className={styles.nav}>
       <ul>
         <li>
           <Link href="/">Home</Link>

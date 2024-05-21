@@ -1,5 +1,7 @@
+import "../../styles/global.css"
 import type { Metadata } from "next";
 import Link from "next/link";
+import Navigation from "../../components/navigation";
 
 export const metadata: Metadata = {
   title: {
@@ -18,14 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <header>
-          <ul>
-            <li>
-              <Link href="/">Home</Link>
-            </li>
-            <li>
-              <Link href="/about-us">About us</Link>
-            </li>
-          </ul>
+          <Navigation/>
         </header>
         {children}
       </body>
